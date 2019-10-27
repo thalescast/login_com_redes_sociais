@@ -69,15 +69,15 @@ Neste meu exemplo, eu quis fazer override em alguns templates. Dessa forma, tive
 
 ```bash
 $
-|──login_com_redes_sociais
+├──login_com_redes_sociais
   ├── app
   ├── myenv
   ├── myproject
-  |── templates
-  |    ├── allauth
-  |       └── account
-  |           └── login.html     
-  |──static
+  ├── templates
+  ├    ├── allauth
+  ├       └── account
+  ├           └── login.html     
+  ├──static
 ```
 
 Depois disso, ir no settings.py e setar a varíavel DIR, em TEMPLATES:
