@@ -65,7 +65,7 @@ Para que se tenha acesso a seguinte lista:
 
 ```
 ## Criando templates/allauth/accounts
-Neste meu exemplo, eu quis fazer override em alguns templates. Dessa forma, tive que criar na raiz do meu projeto o caminho templates/allauth/accounts
+Neste meu exemplo, eu quis fazer override em alguns templates. Dessa forma, tive que criar na raiz do meu projeto o caminho templates/allauth/accounts e adicionar os que eu queria, como, por exemplo, o login.html.
 
 ```bash
 $
@@ -84,3 +84,33 @@ Depois disso, ir no settings.py e setar a varíavel DIR, em TEMPLATES:
 ```python
 'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth')],
 ```
+## Migrando
+```
+python manage.py migrate
+
+```
+## Ir no localhost:8000/admin e verificar:
+
+- Aplicação Contas (Endereço de e-mail)
+
+- Aplicação Contas Sociais (Aplicaçes Sociais, Contas Sociais, Tokens de Aplicativo Social)
+
+- Aplicação Sites (Sites)
+
+## Adicionar novo site no Admins
+
+É ecessário para quando for obter as crendenciais do Google, Facebook, etc., inserindo-se o endereço do respectivo site. Por exemplo, 127.0.0.1:8000
+
+## Providers adicionados no settings.py
+
+Se no INSTALLED_APPS tem ```allauth.socialaccount.providers.google``` e ```allauth.socialaccount.providers.facebook```, então deve-se acrescentar em Aplicativos Sociais, no Admin, as respectivas redes sociais.
+
+## Adicionando uma Aplicação socialaccount
+
+Para cada OAuth based provider, adicionar uma rede social (aplicação socialaccount):
+- Para o Google, tem que ir na [console developers](https://console.developers.google.com)
+- Criar uma aplicação (web application) e adquirir as credenciais: Client ID e a senha.
+- Inserir o endereço do site (127.0.0.1:8000)
+- Inserir o endereço re callback (127.0.0.1:8000/accounts/nome_rede_social/login/callback)
+
+### Ir no Admin e criar um Aplicativo social com as credenciais obtidas no passo anterior.
