@@ -44,12 +44,20 @@ INSTALLED_APPS = [
     # Providers you want enable
     'allauth.socialaccount.providers.google',  # new
     'allauth.socialaccount.providers.facebook',  # new
+
+    # libs
+    'widget_tweaks',
     # My Apps
     'app',
+
 ]
 
 SITE_ID = 2  # new
 LOGIN_REDIRECT_URL = 'home'
+
+# little options for your page's signup.
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQURIED = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,3 +142,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = '@gmail.com.br'
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = True

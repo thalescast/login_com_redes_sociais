@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
-{% load socialaccount %}
-{% block title %}
-    Home
-{% endblock %}
-{% block body %}
-    <h1>Django Allauth</h1>
-    {% if user.is_authenticated %}
-        <p>Seja bem-vindo {{user.username}}</p>
-    {% else %}
-        <a href="{% provider_login_url 'google' %}">Entre com o Facebook</a>
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-dismissible alert-info">
+            <h1 class="display-3"><b>Página Inicial</b></h1>
+
+        {% if user.is_authenticated %}
+                <div class="alert alert-dismissible alert-info">
+                <h2 class="display">Seja bem-vindo {{user.username}}</h2>
+                </div>
+            <a href="{% url 'account_logout' %}">Sair</a>
+        {% else %}
+            <div class="alert alert-dismissible alert-danger">
+                <h3>Você não está logado</h3>
+            </div>
+            <a href="{% url 'account_login' %}">Clique para fazer login</a>
     {% endif %}
+    </div>
+</div>
+</div>
+
 {% endblock %}
