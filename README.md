@@ -93,13 +93,13 @@ python manage.py migrate
 
 - Aplicação Contas (Endereço de e-mail)
 
-- Aplicação Contas Sociais (Aplicaçes Sociais, Contas Sociais, Tokens de Aplicativo Social)
+- Aplicação Contas Sociais (Aplicações Sociais, Contas Sociais, Tokens de Aplicativo Social)
 
 - Aplicação Sites (Sites)
 
 ## Adicionar novo site no Admins
 
-É ecessário para quando for obter as crendenciais do Google, Facebook, etc., inserindo-se o endereço do respectivo site. Por exemplo, 127.0.0.1:8000
+É necessário para quando for obter as crendenciais do Google, Facebook, etc., inserindo-se o endereço do respectivo site. Por exemplo, 127.0.0.1:8000
 
 ## Providers adicionados no settings.py
 
