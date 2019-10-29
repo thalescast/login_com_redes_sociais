@@ -113,4 +113,20 @@ Para cada OAuth based provider, adicionar uma rede social (aplicação socialacc
 - Inserir o endereço do site (127.0.0.1:8000)
 - Inserir o endereço re callback (127.0.0.1:8000/accounts/nome_rede_social/login/callback)
 
+Para o Facebook, o processo é semelhante, colando apenas ```localhost``` no lugar do ```127.0.0.1```. ALém disso, é preciso lembrar de fornecer a URL de redirecionamento, por exemplo, ```http://localhost:8000/accounts/facebook/login/callback```
+
 ### Ir no Admin e criar um Aplicativo social com as credenciais obtidas no passo anterior.
+
+## Cadastre-se e Esqueceu sua senha?
+
+Para resetar um usuário que esqueceu sua senha, faz-se necessário o uso da url ```account_reset_password```, lembrando que o template correspondente pode ser customizado. Já para cadastrar um novo, faz-se uso da ```account_signup```. 
+
+## Servidor SMTP
+
+O passo anterior requer o envio de e-mail, ou seja, envia-se uma mensagem quando se deseja resetar a senha e outro para confirmar a inscrição de um novo usuário. Dessa forma, é necessário a configuração de um servidor SMTP. No meu caso, eu utilizei o terminal para receber os e-mails, setando no settings.py a seguinte variável que o Django provê para testes:
+
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+```
+
+Obs.: mais informações podem ser obtidas na [documentação do Django-Allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)
